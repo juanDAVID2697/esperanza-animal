@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/publication/post', 'PostController@createPost')->name('createP');
+Route::post('/publication/post', 'PostController@storePost')->name('registerPost');
 Route::get('/home', 'ViewPostController@index');
 
 Route::get('/admin/users','UserController@index');

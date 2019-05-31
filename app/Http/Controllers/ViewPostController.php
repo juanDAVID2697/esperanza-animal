@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
 class ViewPostController extends Controller
 {
     
     public function index()
     {
-        return view('ViewPost');
+        $posts= Post::all();
+
+        return view('ViewPost', compact('posts'));
     }
+
+
 }

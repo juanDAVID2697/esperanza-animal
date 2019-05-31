@@ -2,9 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Post extends Authenticatable
+class Post extends Model
 {
-    //
+    protected $fillable=[
+        'user_id','tittle','typePet','location','picture','description',
+  
+    ];
 }
