@@ -6,28 +6,16 @@
 
 @section('content')
 <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+            
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
+            <div class="container">
             <div class="section text-center">
                 <div class="title m-b-md">
                   <h2> Lista de usuarios</h2>
                 </div>
 
                 <div class="links">
- <table class="table">
+ <table class="table table-striped table-dark">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Id</th>
@@ -48,11 +36,12 @@
       <td>{{ $User->phone}}</td>
       <td>{{ $User->email}}</td>
       <td>{{ $User->password}}</td>
-      <td class="text-right"><div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle"
-          data-toggle="dropdown">
-    opciones <span class="caret"></span>
-  </button>
+      <td class="text-right">
+        <div class="btn-group">
+           <button type="button" 
+                   class="btn btn-default dropdown-toggle"
+                   data-toggle="dropdown"> opciones <span class="caret"></span>
+           </button>
 
   <ul class="dropdown-menu" role="menu">
     <li><a href="#">Editar</a></li>
