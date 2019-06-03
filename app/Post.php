@@ -10,4 +10,9 @@ class Post extends Model
         'user_id','tittle','typePet','location','picture','description',
   
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
