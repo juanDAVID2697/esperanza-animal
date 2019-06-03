@@ -20,10 +20,12 @@ return view('admin.users.index')->with(compact('users'));//listado
         //registra un nuevo usuario
         // dd($request->all());
         $user = new User();
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
-        $user->save();
+       $user->name = $request->input('name');
+       $user->lastName = $request->input('lastName');
+       $user->phone = $request->input('phone');
+       $user->email = $request->input('email');
+       $user->password = $request->input('password');
+       $user->save();
 
         return redirect ('/admin/users');
     }
@@ -31,7 +33,7 @@ return view('admin.users.index')->with(compact('users'));//listado
     {
      //   return "mostrar aqui el form de edicion para el producto con id $id";
 
-        $user = User::find($id);
+        $users = User::find($id);
         return view('admin.users.edit')->with(compact('user'));  //formulario
     }
     public function update(Request $request)

@@ -22,4 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/users','UserController@index');
 Route::get('/admin/users/create','UserController@create');
 Route::post('/admin/users','UserController@store');
-Route::get('/admin/users','UserController@index');
+Route::get('/admin/users{id}/edit','UserController@edit');
+Route::get('/admin/users{id}/edit','UserController@update');
+Route::post('/admin/users{id}/delete','UserController@destroy');

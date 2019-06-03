@@ -55,13 +55,16 @@
   </button>
 
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Editar</a></li>
-    <li><a href="#">Eliminar</a></li>
+    <li><a href="{{ url('/admin/users/'.$User->id.'/edit')}}">Editar</a></li>
+
+    <li><a href="{{ url('/admin/users/'.$User->id.'/delete')}}">Eliminar</a></li>
   </ul>
 </div></td>
     </tr>
     @endforeach
+<a href="{{ url('/admin/users/create')}}" class="btn btn-primary">nuevo usuario</a>
   </tbody>
 </table>
+
 
 @stop
