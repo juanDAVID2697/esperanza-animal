@@ -1,8 +1,8 @@
-/vendor/
+.idea/
+vendor/
 node_modules/
 npm-debug.log
-yarn-error.log
-L
+
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
@@ -12,6 +12,7 @@ public/storage
 public/hot
 public/css
 public/js
+public/image
 storage/*.key
 .env
 Homestead.yaml
