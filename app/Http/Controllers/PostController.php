@@ -32,4 +32,9 @@ class PostController extends Controller
         return redirect()->back()->with('success', "El post: $post->tittle ya fue creado con exito.");
     }
 
+    public function show(Post $post)
+    {
+        return view('publication.show', compact('post'));
+    }
+
 }

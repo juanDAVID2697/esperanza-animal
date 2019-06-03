@@ -9,6 +9,9 @@
             <p class="card-text">{{ $post->description }}</p>
             <small class="text-muted">
                 {{ $post->user->email }}
+                @if($post->user_id == Auth::user()->id)
+                    <a href="{{ route('show', $post->id) }}" class="btn btn-outline-danger">Editar</a>
+                @endif
             </small>
         </div>
     </div>
