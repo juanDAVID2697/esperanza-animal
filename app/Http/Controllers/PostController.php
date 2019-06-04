@@ -29,7 +29,7 @@ class PostController extends Controller
             'description' => $request->description,
         ]);
 
-        return redirect()->back()->with('success', "El post: $post->tittle ya fue creado con exito.");
+        return redirect()->back()->with('success', "El post $post->tittle ya fue creado con exito.");
     }
 
 }
