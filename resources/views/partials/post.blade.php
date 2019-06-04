@@ -1,5 +1,6 @@
 <div class="col-4 mt-5">
     <div class="card" style="width: 18rem;">
+      <div class="card-header"> {{ $post->tittle }} </div>
         <img src="{{ $post->picture }}" class="card-img-top" alt="{{ $post->picture }}">
         <div class="card-body">
             <h5 class="card-title">{{ $post->tittle }}</h5>

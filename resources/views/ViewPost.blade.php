@@ -3,7 +3,8 @@
 @section('content')
 
     <div class='container'>
-        <a href="{{ url('/publication/post') }}" class="btn btn-success mb-5">Crear Post</a>
+        <a href="{{ url('/publication/post') }}" class="btn btn-success mb-5"><h2> Crear Post </h2></a>
+        
 
         <div class=row>
             @foreach($posts as $post)
