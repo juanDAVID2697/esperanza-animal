@@ -14,5 +14,12 @@ class ViewPostController extends Controller
         return view('ViewPost', compact('posts'));
     }
 
+    public function editPost($id){
+        $posts = Post::find($id);
+        return view('EditPost', compact('posts'));
+    }
+
+
+
 
 }
