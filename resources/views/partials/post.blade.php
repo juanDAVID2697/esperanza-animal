@@ -8,6 +8,7 @@
             <p class="card-text">{{ $post->description }}</p>
             <p class="card-text">{{ $post->location }}</p>
             <p class="card-text">{{ $post->description }}</p>
+            
             <a href="/views/EditPost/{id}" class="btn btn-outline-danger">Edit</a>
         </div>
     </div>
