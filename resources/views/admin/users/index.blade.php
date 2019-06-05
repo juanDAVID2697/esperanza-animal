@@ -53,6 +53,7 @@
     @endforeach
 <a href="{{ url('/admin/users/create')}}" class="btn btn-primary">nuevo usuario</a>
   </tbody>
+  
 </table>
 
 
