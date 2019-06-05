@@ -30,4 +30,7 @@ Route::get('/admin/users{id}/edit','UserController@update');
 Route::post('/admin/users{id}/delete','UserController@destroy');
 
 //ruta de editar publicación.
-Route::get('/views/EditPost/{id}', 'ViewPostController@editPost');
+Route::get('/views/EditPost/{user_id}', 'ViewPostController@editPost');
+
+//ruta despues de actualizar un post
+Route::post('/publication/post', 'ViewController@editPost')->name('editPost');

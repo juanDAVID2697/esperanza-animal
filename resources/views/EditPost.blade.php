@@ -5,10 +5,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                @if (session()->has('success'))
-                    <div class="alert alert-success" role="alert">
+                @if (session()->has('successs'))
+                    <div class="alert alert-successs" role="alert">
                         <strong>
-                            {{ session()->get('success')}}
+                            {{ session()->get('successs')}}
 
                             <a href="{{url('/home')}}" class="btn btn-outline-danger">Ver posts</a>
                         </strong>
@@ -18,7 +18,7 @@
                     <div class="card-header"><h1> Editing Post </h1></div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('registerPost') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('editPost')}}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group row">

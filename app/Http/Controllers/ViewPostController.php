@@ -14,9 +14,28 @@ class ViewPostController extends Controller
         return view('ViewPost', compact('posts'));
     }
 
-    public function editPost($id){
-        $posts = Post::find($id);
-        return view('EditPost', compact('posts'));
+    public function editPost(Request $request, $user_id){
+        
+        $posts = Post::find()->where($user_id)->first();
+
+        $post->tittle= $request->tittle;
+        $post->typePet= $request->typePet;
+        $post->location= $request->location;
+        $post->picture= $request->picture;
+        $post->description= $request->description;
+
+        $post->save();
+        return redirect()->back()->with('successs',"El post: $post->tittle se ha actualizado con exito");
+
+        
+      //  $posts = Post::findOrFail($user_id);
+      //  $post->tittle= $request->tittle;
+      //  $post->typePet= $request->typePet;
+      //  $post->location= $request->location;
+      //  $post->picture= $request->picture;
+      //  $post->description= $request->description;
+      //  $post->save();
+      //  return view('EditPost', compact('posts'));
     }
 
 
