@@ -20,6 +20,7 @@ Route::get('/publication/post', 'PostController@createPost')->name('createP');
 Route::post('/publication/post', 'PostController@storePost')->name('registerPost');
 Route::get('/publication/post/show/{post}', 'PostController@show')->name('show');
 Route::get('/home', 'ViewPostController@index');
+Route::get('/publication/post/{id}/delete','PostController@destroy');
 
 
 Route::get('/admin/users','UserController@index');
