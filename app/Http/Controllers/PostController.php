@@ -36,5 +36,12 @@ class PostController extends Controller
     {
         return view('publication.show', compact('post'));
     }
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+
+        return back();
+    }
 
 }

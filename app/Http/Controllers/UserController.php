@@ -50,7 +50,6 @@ return view('admin.users.index')->with(compact('users'));//listado
     }
     public function destroy($id)
     {
-
         $user = User::find($id);
         $user->delete();
 

@@ -10,7 +10,10 @@
             <small class="text-muted">
                 {{ $post->user->email }}
                 @if($post->user_id == Auth::user()->id)
-                    <a href="{{ route('show', $post->id) }}" class="btn btn-outline-danger">Editar</a>
+                    
+                    <li><a href="">Editar</a></li>
+                    <li><a href="">Eliminar</a></li>
+                    
                 @endif
             </small>
         </div>
