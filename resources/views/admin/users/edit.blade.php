@@ -8,8 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ url('/admin/users/'.$user->id.'/edit') }}">
-                    {{ csrf_field}}
+                    <form method="POST" action="{{ url('/admin/users/'.$user->id.'/update') }}">
                         @csrf
 
                         <div class="form-group row">

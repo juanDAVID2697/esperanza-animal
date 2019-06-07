@@ -26,9 +26,9 @@ Route::get('/publication/post/{id}/delete','PostController@destroy');
 Route::get('/admin/users','UserController@index');
 Route::get('/admin/users/create','UserController@create');
 Route::post('/admin/users','UserController@store');
-Route::get('/admin/users{id}/edit','UserController@edit');
-Route::get('/admin/users{id}/edit','UserController@update');
-Route::post('/admin/users{id}/delete','UserController@destroy');
+Route::get('/admin/users/{id}/edit','UserController@edit');
+Route::post('/admin/users/{id}/update','UserController@update');
+Route::post('/admin/users/{id}/delete','UserController@destroy');
 
 //ruta de editar publicación.
 Route::get('/views/EditPost/{user_id}', 'ViewPostController@editPost');

@@ -3,7 +3,6 @@
 
 
 
-
 @section('content')
 <div class="flex-center position-ref full-height">
             
@@ -46,7 +45,16 @@
   <ul class="dropdown-menu" role="menu">
     <li><a href="{{ url('/admin/users/'.$User->id.'/edit')}}">Editar</a></li>
 
-    <li><a href="{{ url('/admin/users/'.$User->id.'/delete')}}">Eliminar</a></li>
+<form action="{{ url('/admin/users/'.$User->id.'/delete')}}" method="post">
+@csrf
+<button type="submit"> eliminar </button>
+</form>
+
+
+
+
+
+
   </ul>
 </div></td>
     </tr>

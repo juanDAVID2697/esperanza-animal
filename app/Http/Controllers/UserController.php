@@ -36,7 +36,7 @@ return view('admin.users.index')->with(compact('users'));//listado
         $user = User::find($id); 
         return view('admin.users.edit')->with(compact('user'));  //formulario
     }
-    public function update(Request $request)
+    public function update(Request $request,$id)
     { 
         $user = User::find($id);
         $user->name = $request->input('name');
@@ -48,9 +48,14 @@ return view('admin.users.index')->with(compact('users'));//listado
 
         return redirect ('/admin/users');
     }
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
         $user = User::find($id);
+        $user->name = $request->input('name');
+        $user->lastName = $request->input('lastName');
+        $user->phone = $request->input('phone');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
         $user->delete();
 
         return back();
