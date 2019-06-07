@@ -12,9 +12,7 @@
                 {{ $post->user->email }}
                 @if($post->user_id == Auth::user()->id)
                     
-                    <li><a href="">Editar</a></li>
-                    <li><a href="">Eliminar</a></li>
-                    
+                
                 @endif
             </small>
         </div>

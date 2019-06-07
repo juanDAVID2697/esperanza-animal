@@ -26,7 +26,8 @@ class ViewPostController extends Controller
 
         $post->save();
         return redirect()->back()->with('successs',"El post: $post->tittle se ha actualizado con exito");
-
+    }
+     
         
       //  $posts = Post::findOrFail($user_id);
       //  $post->tittle= $request->tittle;
@@ -41,4 +42,3 @@ class ViewPostController extends Controller
 
 
 
-}

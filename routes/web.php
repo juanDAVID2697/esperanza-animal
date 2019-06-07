@@ -16,10 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/publication/post', 'PostController@createPost')->name('createP');
-Route::post('/publication/post', 'PostController@storePost')->name('registerPost');
+Route::get('/publication/post', 'PostController@createPost')->name('registerPost');
+Route::post('/publication/post', 'PostController@storePost')->name('registraPost');
 Route::get('/publication/post/show/{post}', 'PostController@show')->name('show');
 Route::get('/home', 'ViewPostController@index');
+Route::post('/publication/post/{id}/update','UserController@update');
 Route::get('/publication/post/{id}/delete','PostController@destroy');
 
 
@@ -29,9 +30,3 @@ Route::post('/admin/users','UserController@store');
 Route::get('/admin/users/{id}/edit','UserController@edit');
 Route::post('/admin/users/{id}/update','UserController@update');
 Route::post('/admin/users/{id}/delete','UserController@destroy');
-
-//ruta de editar publicación.
-Route::get('/views/EditPost/{user_id}', 'ViewPostController@editPost');
-
-//ruta despues de actualizar un post
-Route::post('/publication/post', 'ViewController@editPost')->name('editPost');

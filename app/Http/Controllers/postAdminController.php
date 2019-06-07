@@ -2,37 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Post;
-use Illuminate\Support\Facades\Storage;
 
-class PostController extends Controller
+class postAdminController extends Controller
 {
-    public function createPost()
+    public function index()
     {
-        return view('/publication/post');
+        $posts = Posts::paginate(10);
+return view('admin.posts.index')->with(compact('posts'));//listado
     }
-
-    public function storePost(Request $request)
-    {
-
-        //IMAGE
-        $path = Storage::disk('public')->put('image', $request->file('picture'));
-
-        $post = Post::create([
-            'user_id' => Auth::id(),
-            'tittle' => $request->tittle,
-            'typePet' => $request->typePet,
-            'location' => $request->location,
-            'picture' => $path,
-            'description' => $request->description,
-        ]);
-
-        return redirect()->back()->with('success', "El post $post->tittle ya fue creado con exito.");
-    }
-
-    public function show(Post $post)
+    
+    public function show(Posts $posts)
     {
         return view('publication.show', compact('post'));
     }
@@ -56,5 +36,7 @@ class PostController extends Controller
               $post->delete();   //eliminar
         return back();
     }
-
+  
+    
+    //
 }
