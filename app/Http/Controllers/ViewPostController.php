@@ -14,9 +14,9 @@ class ViewPostController extends Controller
         return view('ViewPost', compact('posts'));
     }
 
-    public function editPost(Request $request, $user_id){
+    public function editPost(Request $request, $id){
         
-        $posts = Post::find()->where($user_id)->first();
+        $post= Post::find($id);
 
         $post->tittle= $request->tittle;
         $post->typePet= $request->typePet;
