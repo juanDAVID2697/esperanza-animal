@@ -1,20 +1,21 @@
 <div class="col-4 mt-5">
     <div class="card" style="width: 18rem;">
-      <div class="card-header"> {{ $post->tittle }} </div>
+        <div class="card-header"> {{ $post->tittle }} </div>
         <img src="{{ $post->picture }}" class="card-img-top" alt="{{ $post->picture }}">
         <div class="card-body">
-            
+
             <p class="card-text">{{ $post->typePet }}</p>
             <p class="card-text">{{ $post->description }}</p>
             <p class="card-text">{{ $post->location }}</p>
             <p class="card-text">{{ $post->description }}</p>
             <small class="text-muted">
                 {{ $post->user->email }}
-                @if($post->user_id == Auth::user()->id) 
+                @if($post->user_id == Auth::user()->id)
                 @endif
             </small>
-            <li><a href="{{ url('/views/EditPost/' . $post->id) }}">Editar</a></li>
-
+            <li>
+                <a href="{{ url('/publication/post/' . $post->id) }}">Editar</a>
+            </li>
 
 
         </div>

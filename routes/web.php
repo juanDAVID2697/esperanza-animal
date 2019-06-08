@@ -19,9 +19,10 @@ Auth::routes();
 Route::get('/publication/post', 'PostController@createPost')->name('registerPost');
 Route::post('/publication/post', 'PostController@storePost')->name('registraPost');
 Route::get('/publication/post/show/{post}', 'PostController@show')->name('show');
-Route::get('/home', 'ViewPostController@index');
+Route::get('/home', 'PostController@index');
 Route::post('/publication/post/{id}/update','UserController@update');
 Route::get('/publication/post/{id}/delete','PostController@destroy');
+Route::get('/publication/post/{id}','PostController@show');
 
 
 Route::get('/admin/users','UserController@index');
@@ -30,5 +31,3 @@ Route::post('/admin/users','UserController@store');
 Route::get('/admin/users/{id}/edit','UserController@edit');
 Route::post('/admin/users/{id}/update','UserController@update');
 Route::post('/admin/users/{id}/delete','UserController@destroy');
-
-Route::get('/views/EditPost/{id}','ViewPostController@editPost');
