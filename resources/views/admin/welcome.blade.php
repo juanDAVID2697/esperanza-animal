@@ -68,15 +68,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    BIENVENIDO ADMINISTRADOR
+                    WELCOME ADMIN
                 </div>
 
                 <div class="links">
                    
-<a href="{{ url('/admin/users')}}" class="btn btn-primary">USUARIOS</a>
+<a href="{{ url('/admin/users')}}" class="btn btn-primary">USERS</a>
                     
-<a href="{{ url('/home')}}" class="btn btn-primary">POST</a>
-                  
+<a href="{{ url('/home/')}}" class="btn btn-primary">POSTS</a>
+                  |
                 </div>
             </div>
         </div>
