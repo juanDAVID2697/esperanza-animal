@@ -14,6 +14,8 @@ class ViewPostController extends Controller
         return view('ViewPost', compact('posts'));
     }
 
+
+    
     public function editPost(Request $request, $id){
         
         $post= Post::find($id);

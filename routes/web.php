@@ -32,3 +32,4 @@ Route::post('/admin/users/{id}/update','UserController@update');
 Route::post('/admin/users/{id}/delete','UserController@destroy');
 
 Route::get('/views/EditPost/{id}','ViewPostController@editPost');
+Route::get('/admin','postAdminController@index');

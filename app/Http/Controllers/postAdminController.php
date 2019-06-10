@@ -8,8 +8,7 @@ class postAdminController extends Controller
 {
     public function index()
     {
-        $posts = Posts::paginate(10);
-return view('admin.posts.index')->with(compact('posts'));//listado
+return view('admin.welcome');//listado
     }
     
     public function show(Posts $posts)

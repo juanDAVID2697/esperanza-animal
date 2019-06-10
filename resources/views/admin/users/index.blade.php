@@ -59,10 +59,10 @@
 </div></td>
     </tr>
     @endforeach
-<a href="{{ url('/admin/users/create')}}" class="btn btn-primary">nuevo usuario</a>
-  </tbody>
-  
-</table>
 
+  </tbody>
+ 
+</table>
+<a href="{{ url('/admin')}}" class="btn btn-primary">ATRAS</a>
 
 @stop
