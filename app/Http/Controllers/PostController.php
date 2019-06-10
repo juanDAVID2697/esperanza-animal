@@ -40,34 +40,49 @@ class PostController extends Controller
         return redirect()->back()->with('success', "El post $post->tittle ya fue creado con exito.");
     }
 
-    public function show($post)
+    public function edit(Post $post)
     {
-        $post = Post::findOrFail($post);
 
-        return view('publication.show', compact('post'));
+        return view('publication.edit', compact('post'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $post)
     {
         $path = Storage::disk('public')->put('image', $request->file('picture'));
-        $post = Post::find($id);
+        $post = Post::findOrFail($post);
 
         $post->tittle = $request->input('tittle');
         $post->typePet = $request->input('typePet');
         $post->location = $request->input('location');
         $post->picture = $path;
-        $post->description = $request->input('ndescriptioname');
+        $post->description = $request->input('description');
+        $post->user_id = Auth::id();
         $post->save();   //update
 
-        return redirect('/publication/post');
+        return redirect('/home');
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy(Post $post)
     {
-
-        $post = Post::find($id);
         $post->delete();   //eliminar
         return back();
+    }
+
+    public function indexAdmin()
+    {
+        $posts = Post::all();
+        return view('admin.posts.index', compact('posts'));
+    }
+
+    public function editAdmin(Post $post)
+    {
+        return view('admin.posts.edit', compact('post'));
+    }
+
+    public function updateAdmin(Request $request, $post)
+    {
+        $this->update($request, $post);
+        return redirect()->back();
     }
 
 }

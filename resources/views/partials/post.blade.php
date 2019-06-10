@@ -11,11 +11,16 @@
             <small class="text-muted">
                 {{ $post->user->email }}
                 @if($post->user_id == Auth::user()->id)
+                    <a class="btn btn-outline-secondary" href="{{ route('edit', $post) }}">Editar</a>
+                    <form method="POST" action="{{ route('destroy', $post) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-danger">
+                            Eliminar
+                        </button>
+                    </form>
                 @endif
             </small>
-            <li>
-                <a href="{{ url('/publication/post/' . $post->id) }}">Editar</a>
-            </li>
 
 
         </div>

@@ -18,16 +18,17 @@
                     <div class="card-header"><h1> Editing Post </h1></div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('editPost')}}" enctype="multipart/form-data">
+                        <img src="/{{ $post->picture }}" alt="{{ $post->picture }}" class="img-thumbnail">
+                        <form method="POST" action="{{ route('update', $post) }}" enctype="multipart/form-data">
                             @csrf
-
+                            @method('PUT')
                             <div class="form-group row">
                                 <label for="tittle" class="col-md-4 col-form-label text-md-right"> Titulo </label>
 
                                 <div class="col-md-6">
                                     <input id="tittle" type="text"
-                                           class="form-control @error('tittle') is-invalid @enderror" tittle="tittle"
-                                           value="" required autocomplete="tittle"
+                                           class="form-control @error('tittle') is-invalid @enderror"
+                                           value="{{ $post->tittle }}" required autocomplete="tittle"
                                            name="tittle">
 
                                     @error('tittle')
@@ -42,9 +43,9 @@
                                 <label for="typePet" class="col-md-4 col-form-label text-md-right"> Animal </label>
 
                                 <div class="col-md-6">
-                                    <input id="typePet" type="typePet"
-                                           class="form-control @error('typePet') is-invalid @enderror" tittle="typePet"
-                                           value="" required autocomplete="typePet" name="typePet">
+                                    <input id="typePet" type="text"
+                                           class="form-control @error('typePet') is-invalid @enderror"
+                                           value="{{ $post->typePet }}" required autocomplete="typePet" name="typePet">
 
                                     @error('typePet')
                                     <span class="invalid-feedback" role="alert">
@@ -58,10 +59,10 @@
                                 <label for="location" class="col-md-4 col-form-label text-md-right"> Ubicación </label>
 
                                 <div class="col-md-6">
-                                    <input id="location" type="location"
+                                    <input id="location" type="text"
                                            class="form-control @error('location') is-invalid @enderror"
-                                           tittle="location" required autocomplete="new-location" name="location"
-                                           value="">
+                                           required autocomplete="new-location" name="location"
+                                           value="{{ $post->location }}">
 
                                     @error('location')
                                     <span class="invalid-feedback" role="alert">
@@ -79,9 +80,9 @@
                                 <div class="col-md-6">
                                     <input id="description" type="text"
                                            class="form-control @error('description') is-invalid @enderror"
-                                           tittle="description" required autocomplete="new-description"
+                                           required autocomplete="new-description"
                                            name="description"
-                                           value="">
+                                           value="{{ $post->description }}">
 
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
